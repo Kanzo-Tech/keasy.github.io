@@ -28,7 +28,7 @@ const ITEMS = [
       {
         title: "Data space lifecycle",
         href: "/#knowledge-graphs",
-        description: "DCAT catalogs, SPARQL querying, shape validation, and AI exploration",
+        description: "DCAT catalogs, visual search, shape validation, and AI exploration",
       },
     ],
   },

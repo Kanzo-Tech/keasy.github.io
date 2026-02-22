@@ -27,7 +27,7 @@ const features = [
   },
   {
     title: "Shape validation",
-    description: "Ensure data quality with SHACL/ShEx validation and SPARQL querying",
+    description: "Ensure data quality with SHACL/ShEx validation",
     icon: ShieldCheck,
   },
 ];

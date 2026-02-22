@@ -14,7 +14,7 @@ const items = [
     image: "/features/cycle-card.svg",
   },
   {
-    title: "Explore with AI and SPARQL",
+    title: "Intuitive search, powered by SPARQL",
     image: "/features/overview-card.svg",
   },
 ];

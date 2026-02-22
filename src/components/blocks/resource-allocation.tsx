@@ -70,13 +70,13 @@ const bottomItems = [
     fade: [""],
   },
   {
-    title: "SPARQL querying.",
+    title: "Visual search.",
     description:
-      "Query your knowledge graphs with a built-in SPARQL endpoint.",
+      "An intuitive interface for domain experts — powered by SPARQL under the hood.",
     images: [
       {
         src: "/resource-allocation/notifications.webp",
-        alt: "SPARQL query interface",
+        alt: "Visual search interface",
         width: 305,
         height: 280,
       },
