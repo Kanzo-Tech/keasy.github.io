@@ -48,7 +48,7 @@ export const Hero = () => {
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
             <Button asChild>
-              <a href="/contact">Book a demo</a>
+              <a href="mailto:contact@kanzo.tech">Book a demo</a>
             </Button>
             <Button
               variant="outline"

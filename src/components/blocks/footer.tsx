@@ -8,7 +8,7 @@ export function Footer() {
     { name: "About Us", href: "/about" },
     // { name: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
     { name: "FAQ", href: "/#faq" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   const social = [
@@ -18,7 +18,7 @@ export function Footer() {
   const legal = [{ name: "Privacy Policy", href: "/privacy" }];
 
   return (
-    <footer className="flex flex-col items-center gap-14 pt-28 lg:pt-32">
+    <footer id="contact" className="flex flex-col items-center gap-14 pt-28 lg:pt-32">
       <div className="container space-y-3 text-center">
         <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
           Ready to discover your data?
@@ -29,7 +29,7 @@ export function Footer() {
         </p>
         <div>
           <Button size="lg" className="mt-4" asChild>
-            <a href="/contact">Get in touch</a>
+            <a href="mailto:contact@kanzo.tech">Get in touch</a>
           </Button>
         </div>
       </div>
