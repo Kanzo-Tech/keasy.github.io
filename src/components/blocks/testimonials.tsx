@@ -12,14 +12,14 @@ import { cn } from "@/lib/utils";
 
 const items = [
   {
-    quote: "We're misusing Mainline as a CRM and it still works!",
+    quote: "We're misusing Keasy as a CRM and it still works!",
     author: "Amy Chase",
     role: "PM",
     company: "Mercury Finance",
     image: "/testimonials/amy-chase.webp",
   },
   {
-    quote: "I was able to replace 80% of my team with Mainline bots.",
+    quote: "I was able to replace 80% of my team with Keasy bots.",
     author: "Jonas Kotara",
     role: "Lead Engineer",
     company: "Mercury Finance",
@@ -40,14 +40,14 @@ const items = [
     image: "/testimonials/kundo-marta.webp",
   },
   {
-    quote: "We're misusing Mainline as a CRM and it still works!",
+    quote: "We're misusing Keasy as a CRM and it still works!",
     author: "Amy Chase",
     role: "PM",
     company: "Mercury Finance",
     image: "/testimonials/amy-chase.webp",
   },
   {
-    quote: "I was able to replace 80% of my team with Mainline bots.",
+    quote: "I was able to replace 80% of my team with Keasy bots.",
     author: "Jonas Kotara",
     role: "Lead Engineer",
     company: "Mercury Finance",
@@ -85,7 +85,7 @@ export const Testimonials = ({
               Trusted by product builders
             </h2>
             <p className="text-muted-foreground max-w-md leading-snug">
-              Mainline is built on the habits that make the best product teams
+              Keasy is built on the habits that make the best product teams
               successful: staying focused, moving quickly, and always aiming for
               high-quality work.
             </p>

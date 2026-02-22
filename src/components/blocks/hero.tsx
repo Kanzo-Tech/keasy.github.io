@@ -99,7 +99,7 @@ export const Hero = () => {
         <div className="relative h-[793px] w-full">
           <img
             src="/hero.webp"
-            alt="hero"
+            alt="Keasy platform interface"
             className="w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
           />
         </div>

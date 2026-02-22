@@ -22,15 +22,15 @@ const BlogPost = ({
               <AvatarFallback>{authorName.charAt(0)}</AvatarFallback>
             </Avatar>
             <span>
-              <a href="#" className="font-semibold">
+              <span className="font-semibold">
                 {authorName}
-              </a>
+              </span>
               <span className="ml-1">on {format(pubDate, "MMMM d, yyyy")}</span>
             </span>
           </div>
           <img
             src={image}
-            alt="placeholder"
+            alt={title}
             className="mt-0 mb-8 aspect-video w-full rounded-lg border object-cover"
           />
         </div>

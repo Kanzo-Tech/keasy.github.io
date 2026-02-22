@@ -12,8 +12,7 @@ const BlogPosts = ({ posts }: { posts: any[] }) => {
           </h1>
 
           <p className="text-muted-foreground max-w-md leading-snug font-medium lg:mx-auto">
-            Explore our blog for insightful articles, personal reflections and
-            more.
+            Insights on data discovery, knowledge graphs, and open standards.
           </p>
         </div>
       </section>
@@ -29,7 +28,7 @@ const BlogPosts = ({ posts }: { posts: any[] }) => {
                 <div className="p-2">
                   <img
                     src={post.data.image}
-                    alt="placeholder"
+                    alt={post.data.title}
                     className="aspect-video w-full rounded-lg object-cover"
                   />
                 </div>
@@ -44,9 +43,9 @@ const BlogPosts = ({ posts }: { posts: any[] }) => {
                       <Avatar className="ring-input size-7 rounded-full ring-1">
                         <AvatarImage
                           src={post.data.authorImage}
-                          alt="placeholder"
+                          alt={post.data.title}
                         />
-                        <AvatarFallback>CN</AvatarFallback>
+                        <AvatarFallback>{post.data.authorName?.charAt(0) ?? "K"}</AvatarFallback>
                       </Avatar>
                       <span className="text-sm font-medium">
                         {post.data.authorName}

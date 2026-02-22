@@ -34,6 +34,7 @@ const ITEMS = [
   },
   { label: "About Us", href: "/about" },
   // { label: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
+  // { label: "Blog", href: "/blog" }, // TODO: re-enable when blog posts are ready
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -58,11 +59,12 @@ export const Navbar = () => {
         <a href="/" className="flex shrink-0 items-center gap-2">
           <img
             src="/logo.svg"
-            alt="logo"
-            width={94}
+            alt=""
+            width={18}
             height={18}
             className="dark:invert"
           />
+          <span className="font-display text-2xl font-semibold tracking-tight">keasy</span>
         </a>
 
         {/* Desktop Navigation */}
