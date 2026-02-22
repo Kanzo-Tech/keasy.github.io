@@ -84,9 +84,8 @@ export const Logos = () => {
     <section className="overflow-hidden pb-28 lg:pb-32">
       <div className="container space-y-10 lg:space-y-16">
         <div className="text-center">
-          <h2 className="mb-4 text-xl text-balance md:text-2xl lg:text-3xl">
-            Bridging the gap between data and domain expertise.
-            <br className="max-md:hidden" />
+          <h2 className="mx-auto mb-4 max-w-3xl text-xl md:text-2xl lg:text-3xl">
+            Bridging the gap between data and domain expertise.{" "}
             <span className="text-muted-foreground">
               Built with the teams turning raw data into real knowledge.
             </span>
