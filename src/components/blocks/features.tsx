@@ -5,15 +5,15 @@ import { Card, CardContent } from "@/components/ui/card";
 const items = [
   {
     title: "Ingest from any data source",
-    image: "/features/triage-card.svg",
+    image: "/screenshots/data-ingestion.webp",
   },
   {
     title: "Auto-catalog with DCAT standards",
-    image: "/features/cycle-card.svg",
+    image: "/screenshots/dcat-cataloging.webp",
   },
   {
     title: "Intuitive search, powered by SPARQL",
-    image: "/features/overview-card.svg",
+    image: "/screenshots/sparql-search.webp",
   },
 ];
 
@@ -51,7 +51,12 @@ export const Features = () => {
                     <img
                       src={item.image}
                       alt={`${item.title} interface`}
-                      className="size-full object-cover object-left-top"
+                      className="size-full object-cover object-left-top dark:hidden"
+                    />
+                    <img
+                      src={item.image.replace(/(\.\w+)$/, "-dark$1")}
+                      alt={`${item.title} interface`}
+                      className="hidden size-full object-cover object-left-top dark:block"
                     />
                     <div className="from-background absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
                   </div>

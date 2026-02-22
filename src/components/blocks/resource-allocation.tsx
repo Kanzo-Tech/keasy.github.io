@@ -9,7 +9,7 @@ const topItems = [
       "Automatically generate standards-compliant data catalogs from your sources.",
     images: [
       {
-        src: "/resource-allocation/templates.webp",
+        src: "/screenshots/catalog-generation.webp",
         alt: "DCAT catalog interface",
       },
     ],
@@ -20,7 +20,7 @@ const topItems = [
     description: "Connect to Amazon S3, Google Cloud Storage, Azure Blob, or your local filesystem.",
     images: [
       {
-        src: "/resource-allocation/templates.webp",
+        src: "/screenshots/source-connectors.webp",
         alt: "Multi-source connectors interface",
       },
     ],
@@ -35,7 +35,7 @@ const bottomItems = [
       "Validate your data against SHACL/ShEx constraints to ensure quality and compliance.",
     images: [
       {
-        src: "/resource-allocation/graveyard.webp",
+        src: "/screenshots/shape-validation.webp",
         alt: "Shape validation interface",
       },
     ],
@@ -47,7 +47,7 @@ const bottomItems = [
       "Let domain experts ask questions in natural language and get answers from your data.",
     images: [
       {
-        src: "/resource-allocation/discussions.webp",
+        src: "/screenshots/ai-exploration.webp",
         alt: "AI exploration interface",
       },
     ],
@@ -59,7 +59,7 @@ const bottomItems = [
       "An intuitive interface for domain experts — powered by SPARQL under the hood.",
     images: [
       {
-        src: "/resource-allocation/notifications.webp",
+        src: "/screenshots/visual-search.webp",
         alt: "Visual search interface",
       },
     ],
@@ -140,12 +140,18 @@ const Item = ({ item, isLast, className }: ItemProps) => {
           <div className="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
         )}
         {item.images.map((image, j) => (
-          <img
-            key={j}
-            src={image.src}
-            alt={image.alt}
-            className="w-full rounded-md object-cover object-left-top"
-          />
+          <div key={j}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full rounded-md object-cover object-left-top dark:hidden"
+            />
+            <img
+              src={image.src.replace(/(\.\w+)$/, "-dark$1")}
+              alt={image.alt}
+              className="hidden w-full rounded-md object-cover object-left-top dark:block"
+            />
+          </div>
         ))}
       </div>
 
