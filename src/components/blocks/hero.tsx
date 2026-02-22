@@ -56,7 +56,7 @@ export const Hero = () => {
               asChild
             >
               <a
-                href="#data-cataloging"
+                href="#knowledge-graphs"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
                 See how it works

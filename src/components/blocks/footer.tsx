@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const navigation = [
-    { name: "Product", href: "/#data-cataloging" },
+    { name: "Product", href: "/#knowledge-graphs" },
     { name: "About Us", href: "/about" },
     // { name: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
     // { name: "Blog", href: "/blog" }, // TODO: re-enable when blog posts are ready
