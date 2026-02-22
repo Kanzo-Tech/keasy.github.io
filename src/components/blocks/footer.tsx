@@ -7,7 +7,7 @@ export function Footer() {
   const navigation = [
     { name: "Product", href: "/#feature-modern-teams" },
     { name: "About Us", href: "/about" },
-    { name: "Pricing", href: "/pricing" },
+    // { name: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
   ];

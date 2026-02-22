@@ -33,7 +33,7 @@ const ITEMS = [
     ],
   },
   { label: "About Us", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
+  // { label: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
