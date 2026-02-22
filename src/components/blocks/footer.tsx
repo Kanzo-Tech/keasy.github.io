@@ -8,7 +8,7 @@ export function Footer() {
     { name: "Product", href: "/#data-cataloging" },
     { name: "About Us", href: "/about" },
     // { name: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
-    { name: "FAQ", href: "/faq" },
+    { name: "FAQ", href: "/#faq" },
     { name: "Contact", href: "/contact" },
   ];
 

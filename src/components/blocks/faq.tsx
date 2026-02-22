@@ -8,52 +8,57 @@ import { cn } from "@/lib/utils";
 
 const categories = [
   {
-    title: "Support",
+    title: "Product",
     questions: [
       {
-        question: "How do I update my account without breaking my laptop?",
+        question: "What is Keasy?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Keasy is a data discovery and cataloging platform. It processes data from cloud storage or local sources into RDF knowledge graphs, with automatic DCAT catalog generation, visual search, AI-powered exploration, and shape validation.",
       },
       {
-        question: "Is support free, or do I need to Google everything?",
+        question: "Who is Keasy for?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Keasy is built for domain experts who need to discover and understand data without relying on engineering teams. It bridges the gap between raw data and the people who need it most.",
       },
       {
-        question: "Are you going to be subsumed by AI?",
+        question: "Do I need technical knowledge to use Keasy?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Not at all. Keasy provides an intuitive visual interface for searching and exploring your data. SPARQL and RDF work under the hood — you don't need to know them to get value from the platform.",
       },
     ],
   },
   {
-    title: "Your account",
+    title: "Data",
     questions: [
       {
-        question: "Is support free, or do I need to Google everything?",
+        question: "What data sources does Keasy support?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Keasy connects to Amazon S3, Google Cloud Storage, Azure Blob Storage, and local filesystems. We're continuously adding support for more sources.",
       },
       {
-        question: "Are you going to be subsumed by AI?",
+        question: "What standards does Keasy use?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Keasy is built on open standards: RDF for knowledge graphs, DCAT for data catalogs, and SHACL/ShEx for shape validation. This ensures interoperability and avoids vendor lock-in.",
+      },
+      {
+        question: "How does Keasy ensure data quality?",
+        answer:
+          "Keasy validates your data against SHACL and ShEx shape constraints, helping you catch inconsistencies and ensure compliance with your data models.",
       },
     ],
   },
   {
-    title: "Other questions",
+    title: "Getting started",
     questions: [
       {
-        question: "Is support free, or do I need to Google everything?",
+        question: "How can I try Keasy?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "You can book a demo through our contact page. We'll walk you through the platform and discuss how Keasy fits your data needs.",
       },
       {
-        question: "Are you going to be subsumed by AI?",
+        question: "How long does it take to set up?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Keasy can be connected to your data sources in minutes. Once connected, catalog generation and indexing happen automatically.",
       },
     ],
   },
@@ -69,7 +74,7 @@ export const FAQ = ({
   className2?: string;
 }) => {
   return (
-    <section className={cn("py-28 lg:py-32", className)}>
+    <section id="faq" className={cn("py-28 lg:py-32", className)}>
       <div className="container max-w-5xl">
         <div className={cn("mx-auto grid gap-16 lg:grid-cols-2", className2)}>
           <div className="space-y-4">
