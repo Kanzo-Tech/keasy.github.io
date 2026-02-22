@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const AboutSection = () => {
@@ -8,17 +7,17 @@ export const AboutSection = () => {
       <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
         <ImageSection
           images={[
-            { src: "/about/1.webp", alt: "Team collaboration" },
-            { src: "/about/2.webp", alt: "Team workspace" },
+            { src: "/about/1.webp", alt: "Keasy platform" },
+            { src: "/about/2.webp", alt: "Data exploration" },
           ]}
           className="xl:-translate-x-10"
         />
 
         <TextSection
-          title="The team"
+          title="Our vision"
           paragraphs={[
-            "We started building Mainline in 2019 and launched in 2022. Every endpoint has been designed from the ground up — with no technical debt or legacy systems. We are purpose-built to power project management innovation for the next hundred years.",
-            "We are 100% founder and team-owned, profitable, and we keep our team lean. Over time, this page will become more polished, but for now, we're focused on delivering for developers.",
+            "We believe every organization sits on a wealth of untapped data. The challenge isn't collecting it — it's making it understandable and accessible to the people who know it best.",
+            "Keasy is built on open standards like RDF, DCAT, and SHACL/ShEx, ensuring your data remains interoperable and free from vendor lock-in. We bring the power of knowledge graphs and AI to domain experts through an intuitive interface — no technical background required.",
           ]}
         />
       </div>
@@ -26,15 +25,16 @@ export const AboutSection = () => {
       {/* Text Left - Images Right */}
       <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
         <TextSection
+          title="Our mission"
           paragraphs={[
-            "At Mainline, we are dedicated to transforming the way teams plan, execute, and deliver projects. Our mission is to provide our customers with an unbeatable edge over delays, inefficiencies, and disorganisation through actionable insights and seamless collaboration. We'll stop at nothing to give you the tools you need to get every project across the finish line.",
-            "We're customer-obsessed — investing the time to understand every aspect of your workflow so that we can help you operate better than ever before. We're all in this together because your success is our success. In our history as a company, we've never lost a customer, because when your projects succeed, so do we.",
+            "Keasy exists to put data discovery in the hands of domain experts. We connect to your data sources — whether cloud storage or local filesystems — and automatically transform raw data into rich, explorable knowledge graphs.",
+            "From DCAT catalog generation to AI-powered exploration, every feature is designed to remove the barriers between people and the data they need. No more waiting on engineering. No more siloed knowledge.",
           ]}
         />
         <ImageSection
           images={[
-            { src: "/about/3.webp", alt: "Modern workspace" },
-            { src: "/about/4.webp", alt: "Team collaboration" },
+            { src: "/about/3.webp", alt: "Knowledge graph visualization" },
+            { src: "/about/4.webp", alt: "Data cataloging" },
           ]}
           className="hidden lg:flex xl:translate-x-10"
         />
@@ -70,32 +70,17 @@ export function ImageSection({ images, className }: ImageSectionProps) {
 interface TextSectionProps {
   title?: string;
   paragraphs: string[];
-  ctaButton?: {
-    href: string;
-    text: string;
-  };
 }
 
-export function TextSection({
-  title,
-  paragraphs,
-  ctaButton,
-}: TextSectionProps) {
+export function TextSection({ title, paragraphs }: TextSectionProps) {
   return (
     <div className="flex-1 space-y-4 text-lg font-medium md:space-y-6">
-      {title && <h2 className="text-primary text-4xl font-medium">{title}</h2>}
+      {title && <h2 className="text-foreground text-4xl font-medium">{title}</h2>}
       <div className="text-muted-foreground max-w-xl space-y-6">
         {paragraphs.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
       </div>
-      {ctaButton && (
-        <div className="mt-8">
-          <a href={ctaButton.href}>
-            <Button size="lg">{ctaButton.text}</Button>
-          </a>
-        </div>
-      )}
     </div>
   );
 }
