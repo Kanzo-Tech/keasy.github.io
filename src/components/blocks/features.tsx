@@ -1,25 +1,32 @@
-import { DashedLine } from "../dashed-line";
+import { Combine, Globe, Sparkles } from "lucide-react";
 
+import { DashedLine } from "../dashed-line";
 import { Card, CardContent } from "@/components/ui/card";
 
 const items = [
   {
-    title: "Ingest from any data source",
-    image: "/screenshots/data-ingestion.webp",
+    icon: Combine,
+    title: "Break down data silos",
+    description:
+      "Connect scattered sources — cloud storage, local files, databases — into a single, unified data space your whole organization can use.",
   },
   {
-    title: "Auto-catalog with DCAT standards",
-    image: "/screenshots/dcat-cataloging.webp",
+    icon: Globe,
+    title: "Open standards, zero lock-in",
+    description:
+      "Built on DCAT, SPARQL, and SHACL. Your catalogs and queries use open W3C standards — no proprietary formats, fully portable.",
   },
   {
-    title: "Intuitive search, powered by SPARQL",
-    image: "/screenshots/sparql-search.webp",
+    icon: Sparkles,
+    title: "No PhD required",
+    description:
+      "Keasy handles the complexity of semantic web technologies behind the scenes. Domain experts catalog, search, and validate data through an intuitive UI and AI.",
   },
 ];
 
 export const Features = () => {
   return (
-    <section id="data-cataloging" className="pb-28 lg:pb-32">
+    <section id="why-keasy" className="pb-28 lg:pb-32">
       <div className="container">
         {/* Top dashed line with text */}
         <div className="relative flex items-center justify-center">
@@ -35,39 +42,26 @@ export const Features = () => {
             From raw data to actionable knowledge
           </h2>
           <p className="text-muted-foreground leading-snug">
-            Keasy ingests data from cloud or local sources, automatically catalogs
-            it using open standards, and lets domain experts explore it
-            through AI — no engineering required.
+            Keasy turns raw, scattered data into a governed knowledge
+            base that anyone in your organization can trust and explore.
           </p>
         </div>
 
-        {/* Features Card */}
-        <Card className="mt-8 rounded-3xl md:mt-12 lg:mt-20">
+        {/* Value propositions */}
+        <Card className="mx-auto mt-8 max-w-5xl rounded-3xl md:mt-12 lg:mt-20">
           <CardContent className="flex p-0 max-md:flex-col">
             {items.map((item, i) => (
               <div key={i} className="flex flex-1 max-md:flex-col">
-                <div className="flex-1 p-4 pe-0! md:p-6">
-                  <div className="relative aspect-[1.28/1] overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={`${item.title} interface`}
-                      className="size-full object-cover object-left-top dark:hidden"
-                    />
-                    <img
-                      src={item.image.replace(/(\.\w+)$/, "-dark$1")}
-                      alt={`${item.title} interface`}
-                      className="hidden size-full object-cover object-left-top dark:block"
-                    />
-                    <div className="from-background absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
+                <div className="flex flex-1 flex-col gap-4 p-6 md:p-8">
+                  <div className="bg-muted flex size-10 items-center justify-center rounded-lg">
+                    <item.icon className="text-foreground size-5" />
                   </div>
-
-                  <div
-                    className="flex items-center justify-between gap-4 pe-4 pt-4 md:pe-6 md:pt-6"
-                  >
-                    <h3 className="font-display max-w-60 text-2xl leading-tight font-bold tracking-tight">
-                      {item.title}
-                    </h3>
-                  </div>
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
                 {i < items.length - 1 && (
                   <div className="relative hidden md:block">

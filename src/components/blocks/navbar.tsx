@@ -20,10 +20,10 @@ const ITEMS = [
     href: "#features",
     dropdownItems: [
       {
-        title: "Data cataloging",
-        href: "/#data-cataloging",
+        title: "Why Keasy",
+        href: "/#why-keasy",
         description:
-          "Ingest, catalog, and explore your data from any source",
+          "Open standards, no silos, no PhD required",
       },
       {
         title: "Data space lifecycle",
@@ -198,7 +198,7 @@ export const Navbar = () => {
                         }}
                       >
                         <div className="transition-transform duration-200 group-hover:translate-x-1">
-                          <div className="text-primary font-medium">
+                          <div className="text-foreground font-medium">
                             {item.title}
                           </div>
 
