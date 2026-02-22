@@ -20,15 +20,15 @@ const ITEMS = [
     href: "#features",
     dropdownItems: [
       {
-        title: "Modern product teams",
-        href: "/#feature-modern-teams",
+        title: "Data cataloging",
+        href: "/#data-cataloging",
         description:
-          "Mainline is built on the habits that make the best product teams successful",
+          "Ingest, catalog, and explore your data from any source",
       },
       {
-        title: "Resource Allocation",
-        href: "/#resource-allocation",
-        description: "Mainline your resource allocation and execution",
+        title: "Data space lifecycle",
+        href: "/#knowledge-graphs",
+        description: "DCAT catalogs, SPARQL querying, shape validation, and AI exploration",
       },
     ],
   },

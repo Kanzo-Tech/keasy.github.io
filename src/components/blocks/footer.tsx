@@ -5,7 +5,7 @@ import { GITHUB_URL } from "@/consts";
 
 export function Footer() {
   const navigation = [
-    { name: "Product", href: "/#feature-modern-teams" },
+    { name: "Product", href: "/#data-cataloging" },
     { name: "About Us", href: "/about" },
     // { name: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
     { name: "FAQ", href: "/faq" },

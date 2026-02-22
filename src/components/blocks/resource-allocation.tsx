@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils";
 
 const topItems = [
   {
-    title: "Reusable issue templates.",
+    title: "DCAT catalog generation.",
     description:
-      "Draft lightning-fast documents with our Smart Instructions and Templates.",
+      "Automatically generate standards-compliant data catalogs from your sources.",
     images: [
       {
         src: "/resource-allocation/templates.webp",
-        alt: "Issue template interface",
+        alt: "DCAT catalog interface",
         width: 495,
         height: 186,
       },
@@ -20,37 +20,15 @@ const topItems = [
     fade: [""],
   },
   {
-    title: "Simplify your stack.",
-    description: "No more Confluence, SharePoint, or Microsoft Word.",
+    title: "Multi-source connectors.",
+    description: "Connect to Amazon S3, Google Cloud Storage, Azure Blob, or your local filesystem.",
     images: [
-      { src: "/logos/jira.svg", alt: "Jira logo", width: 48, height: 48 },
-      { src: "/logos/excel.svg", alt: "Excel logo", width: 48, height: 48 },
       {
-        src: "/logos/notion.svg",
-        alt: "Notion logo",
-        width: 48,
-        height: 48,
+        src: "/resource-allocation/templates.webp",
+        alt: "Multi-source connectors interface",
+        width: 495,
+        height: 186,
       },
-      { src: "/logos/word.svg", alt: "Word logo", width: 48, height: 48 },
-      {
-        src: "/logos/monday.svg",
-        alt: "Monday logo",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/drive.svg",
-        alt: "Google Drive logo",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/jira.svg",
-        alt: "Jira logo",
-        width: 48,
-        height: 48,
-      },
-      { src: "/logos/asana.svg", alt: "Asana logo", width: 48, height: 48 },
     ],
     className:
       "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 md:[&>.title-container]:translate-x-2 xl:[&>.title-container]:translate-x-4 [&>.title-container]:translate-x-0",
@@ -60,13 +38,13 @@ const topItems = [
 
 const bottomItems = [
   {
-    title: "Graveyard it.",
+    title: "Shape validation.",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.",
+      "Validate your data against SHACL/ShEx constraints to ensure quality and compliance.",
     images: [
       {
         src: "/resource-allocation/graveyard.webp",
-        alt: "Graveyard interface",
+        alt: "Shape validation interface",
         width: 305,
         height: 280,
       },
@@ -76,13 +54,13 @@ const bottomItems = [
     fade: ["bottom"],
   },
   {
-    title: "Task discussions.",
+    title: "AI-powered exploration.",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.",
+      "Let domain experts ask questions in natural language and get answers from your data.",
     images: [
       {
         src: "/resource-allocation/discussions.webp",
-        alt: "Task discussions interface",
+        alt: "AI exploration interface",
         width: 320,
         height: 103,
       },
@@ -92,13 +70,13 @@ const bottomItems = [
     fade: [""],
   },
   {
-    title: "Notifications.",
+    title: "SPARQL querying.",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.",
+      "Query your knowledge graphs with a built-in SPARQL endpoint.",
     images: [
       {
         src: "/resource-allocation/notifications.webp",
-        alt: "Notifications interface",
+        alt: "SPARQL query interface",
         width: 305,
         height: 280,
       },
@@ -112,12 +90,12 @@ const bottomItems = [
 export const ResourceAllocation = () => {
   return (
     <section
-      id="resource-allocation"
+      id="knowledge-graphs"
       className="overflow-hidden pb-28 lg:pb-32"
     >
       <div className="">
         <h2 className="container text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-          Mainline your resource allocation and execution
+          Your complete data space lifecycle
         </h2>
 
         <div className="mt-8 md:mt-12 lg:mt-20">
@@ -181,61 +159,18 @@ const Item = ({ item, isLast, className }: ItemProps) => {
       {item.fade.includes("bottom") && (
         <div className="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
       )}
-      {item.images.length > 4 ? (
-        <div className="relative overflow-hidden">
-          <div className="flex flex-col gap-5">
-            {/* First row - right aligned */}
-            <div className="flex translate-x-4 justify-end gap-5">
-              {item.images.slice(0, 4).map((image, j) => (
-                <div
-                  key={j}
-                  className="bg-background grid aspect-square size-16 place-items-center rounded-2xl p-2 lg:size-20"
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="object-contain object-left-top"
-                  />
-                  <div className="from-muted/80 absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l to-transparent" />
-                </div>
-              ))}
-            </div>
-            {/* Second row - left aligned */}
-            <div className="flex -translate-x-4 gap-5">
-              {item.images.slice(4).map((image, j) => (
-                <div
-                  key={j}
-                  className="bg-background grid aspect-square size-16 place-items-center rounded-2xl lg:size-20"
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="object-contain object-left-top"
-                  />
-                  <div className="from-muted absolute inset-y-0 bottom-0 left-0 z-10 w-14 bg-linear-to-r to-transparent" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="image-container grid grid-cols-1 gap-4">
-          {item.images.map((image, j) => (
-            <img
-              key={j}
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-              className="object-contain object-left-top"
-            />
-          ))}
-        </div>
-      )}
+      <div className="image-container grid grid-cols-1 gap-4">
+        {item.images.map((image, j) => (
+          <img
+            key={j}
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            className="object-contain object-left-top"
+          />
+        ))}
+      </div>
 
       {!isLast && (
         <>

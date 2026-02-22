@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 const features = [
   {
     title: "Data cataloging",
-    description: "Automatically process and catalog data from your cloud storage",
+    description: "Automatically process and catalog data from any source",
     icon: BookOpen,
   },
   {
@@ -56,7 +56,7 @@ export const Hero = () => {
               asChild
             >
               <a
-                href="#feature-modern-teams"
+                href="#data-cataloging"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
                 See how it works

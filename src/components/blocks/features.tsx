@@ -6,40 +6,40 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const items = [
   {
-    title: "Purpose-built for product development",
+    title: "Ingest from any data source",
     image: "/features/triage-card.svg",
   },
   {
-    title: "Manage projects end-to-end",
+    title: "Auto-catalog with DCAT standards",
     image: "/features/cycle-card.svg",
   },
   {
-    title: "Build momentum and healthy habits",
+    title: "Explore with AI and SPARQL",
     image: "/features/overview-card.svg",
   },
 ];
 
 export const Features = () => {
   return (
-    <section id="feature-modern-teams" className="pb-28 lg:pb-32">
+    <section id="data-cataloging" className="pb-28 lg:pb-32">
       <div className="container">
         {/* Top dashed line with text */}
         <div className="relative flex items-center justify-center">
           <DashedLine className="text-muted-foreground" />
           <span className="bg-muted text-muted-foreground absolute px-3 font-mono text-sm font-medium tracking-wide max-md:hidden">
-            MEASURE TWICE. CUT ONCE.
+            KNOW YOUR DATA. OWN YOUR DATA.
           </span>
         </div>
 
         {/* Content */}
-        <div className="mx-auto mt-10 grid max-w-4xl items-center gap-3 md:gap-0 lg:mt-24 lg:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-5xl items-center gap-3 md:gap-0 lg:mt-24 lg:grid-cols-2">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            Made for modern product teams
+            From raw data to actionable knowledge
           </h2>
           <p className="text-muted-foreground leading-snug">
-            Mainline is built on the habits that make the best product teams
-            successful: staying focused, moving quickly, and always aiming for
-            high-quality work.
+            Keasy ingests data from cloud or local sources, automatically catalogs
+            it using open standards, and lets domain experts explore it
+            through AI — no engineering required.
           </p>
         </div>
 
