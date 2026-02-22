@@ -1,0 +1,163 @@
+---
+import { Image } from 'astro:assets';
+import { DashedLine } from '../dashed-line';
+
+import catalogGeneration from '@/assets/screenshots/catalog-generation.webp';
+import catalogGenerationDark from '@/assets/screenshots/catalog-generation-dark.webp';
+import sourceConnectors from '@/assets/screenshots/source-connectors.webp';
+import sourceConnectorsDark from '@/assets/screenshots/source-connectors-dark.webp';
+import shapeValidation from '@/assets/screenshots/shape-validation.webp';
+import shapeValidationDark from '@/assets/screenshots/shape-validation-dark.webp';
+import aiExploration from '@/assets/screenshots/ai-exploration.webp';
+import aiExplorationDark from '@/assets/screenshots/ai-exploration-dark.webp';
+import visualSearch from '@/assets/screenshots/visual-search.webp';
+import visualSearchDark from '@/assets/screenshots/visual-search-dark.webp';
+
+const topItems = [
+  {
+    title: "DCAT catalog generation.",
+    description:
+      "Automatically generate standards-compliant data catalogs from your sources.",
+    image: catalogGeneration,
+    imageDark: catalogGenerationDark,
+    alt: "DCAT catalog interface",
+    fade: false,
+  },
+  {
+    title: "Multi-source connectors.",
+    description:
+      "Connect to Amazon S3, Google Cloud Storage, Azure Blob, or your local filesystem.",
+    image: sourceConnectors,
+    imageDark: sourceConnectorsDark,
+    alt: "Multi-source connectors interface",
+    fade: false,
+  },
+];
+
+const bottomItems = [
+  {
+    title: "Shape validation.",
+    description:
+      "Validate your data against SHACL/ShEx constraints to ensure quality and compliance.",
+    image: shapeValidation,
+    imageDark: shapeValidationDark,
+    alt: "Shape validation interface",
+    fade: true,
+  },
+  {
+    title: "AI-powered exploration.",
+    description:
+      "Let domain experts ask questions in natural language and get answers from your data.",
+    image: aiExploration,
+    imageDark: aiExplorationDark,
+    alt: "AI exploration interface",
+    fade: false,
+  },
+  {
+    title: "Visual search.",
+    description:
+      "An intuitive interface for domain experts — powered by SPARQL under the hood.",
+    image: visualSearch,
+    imageDark: visualSearchDark,
+    alt: "Visual search interface",
+    fade: true,
+  },
+];
+---
+
+<section id="knowledge-graphs" class="overflow-hidden pb-28 lg:pb-32">
+  <div>
+    <h2 class="container text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
+      Your complete data space lifecycle
+    </h2>
+
+    <div class="mt-8 md:mt-12 lg:mt-20">
+      <DashedLine orientation="horizontal" className="container scale-x-105" />
+
+      <!-- Top Features Grid - 2 items -->
+      <div class="relative container flex max-md:flex-col">
+        {topItems.map((item, i) => (
+          <div class="relative flex flex-1 flex-col gap-5 px-0 py-6 md:gap-8 md:px-6 md:py-8">
+            <div class="text-balance">
+              <h3 class="inline font-semibold">{item.title} </h3>
+              <span class="text-muted-foreground"> {item.description}</span>
+            </div>
+
+            <div class="relative overflow-hidden rounded-md border border-border">
+              {item.fade && (
+                <div class="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
+              )}
+              <Image
+                src={item.image}
+                alt={item.alt}
+                widths={[400, 800]}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                class="w-full dark:hidden"
+              />
+              <Image
+                src={item.imageDark}
+                alt={item.alt}
+                widths={[400, 800]}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                class="hidden w-full dark:block"
+              />
+            </div>
+
+            {i < topItems.length - 1 && (
+              <>
+                <DashedLine orientation="vertical" className="absolute top-0 right-0 max-md:hidden" />
+                <DashedLine orientation="horizontal" className="absolute inset-x-0 bottom-0 md:hidden" />
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <DashedLine orientation="horizontal" className="container max-w-7xl scale-x-110" />
+
+      <!-- Bottom Features Grid - 3 items -->
+      <div class="relative container flex max-md:flex-col">
+        {bottomItems.map((item, i) => (
+          <div class:list={[
+            "relative flex flex-1 flex-col gap-5 px-0 py-6 md:gap-8 md:px-6 md:py-8",
+            i === 0 ? "md:pl-0" : i === bottomItems.length - 1 ? "md:pr-0" : "",
+          ]}>
+            <div class="text-balance">
+              <h3 class="inline font-semibold">{item.title} </h3>
+              <span class="text-muted-foreground"> {item.description}</span>
+            </div>
+
+            <div class="relative overflow-hidden rounded-md border border-border">
+              {item.fade && (
+                <div class="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
+              )}
+              <Image
+                src={item.image}
+                alt={item.alt}
+                widths={[400, 800]}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                class="w-full dark:hidden"
+              />
+              <Image
+                src={item.imageDark}
+                alt={item.alt}
+                widths={[400, 800]}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                class="hidden w-full dark:block"
+              />
+            </div>
+
+            {i < bottomItems.length - 1 && (
+              <>
+                <DashedLine orientation="vertical" className="absolute top-0 right-0 max-md:hidden" />
+                <DashedLine orientation="horizontal" className="absolute inset-x-0 bottom-0 md:hidden" />
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <DashedLine orientation="horizontal" className="container max-w-7xl scale-x-110" />
+    </div>
+  </div>
+</section>
