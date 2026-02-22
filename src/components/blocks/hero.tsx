@@ -100,7 +100,7 @@ export const Hero = () => {
           <img
             src="/hero.webp"
             alt="Keasy platform interface"
-            className="w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
+            className="w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-r-none"
           />
         </div>
       </div>

@@ -51,7 +51,7 @@ export const Features = () => {
                     <img
                       src={item.image}
                       alt={`${item.title} interface`}
-                      className="object-cover object-left-top ps-4 pt-2"
+                      className="size-full object-cover object-left-top"
                     />
                     <div className="from-background absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
                   </div>
