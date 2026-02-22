@@ -19,12 +19,7 @@ export const AboutSection = () => {
           paragraphs={[
             "We started building Mainline in 2019 and launched in 2022. Every endpoint has been designed from the ground up — with no technical debt or legacy systems. We are purpose-built to power project management innovation for the next hundred years.",
             "We are 100% founder and team-owned, profitable, and we keep our team lean. Over time, this page will become more polished, but for now, we're focused on delivering for developers.",
-            "If you're interested in building the future of PM, check out our open roles below.",
           ]}
-          ctaButton={{
-            href: "/careers",
-            text: "View open roles",
-          }}
         />
       </div>
 

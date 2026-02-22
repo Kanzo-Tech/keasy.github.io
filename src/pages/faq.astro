@@ -3,8 +3,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import { Background } from '@/components/background';
 import { FAQ } from '@/components/blocks/faq';
-import { Testimonials } from '@/components/blocks/testimonials';
-import { DashedLine } from '@/components/dashed-line';
+// import { Testimonials } from '@/components/blocks/testimonials'; // TODO: re-enable when testimonials/case studies are ready
+// import { DashedLine } from '@/components/dashed-line'; // TODO: re-enable with testimonials
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 ---
 <DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -15,8 +15,7 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
       className2="max-w-xl lg:grid-cols-1"
       headerTag="h1"
     />
-    <DashedLine className="mx-auto max-w-xl" />
-    <Testimonials dashedLineClassName="hidden" client:only='react'
-    />
+    <!-- <DashedLine className="mx-auto max-w-xl" /> -->
+    <!-- <Testimonials dashedLineClassName="hidden" client:only='react' /> --> <!-- TODO: re-enable when testimonials/case studies are ready -->
   </Background>
 </DefaultLayout>

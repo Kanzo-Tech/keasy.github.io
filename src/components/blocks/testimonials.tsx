@@ -1,8 +1,5 @@
-import { ArrowRight } from "lucide-react";
-
 import { DashedLine } from "../dashed-line";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -92,9 +89,6 @@ export const Testimonials = ({
               successful: staying focused, moving quickly, and always aiming for
               high-quality work.
             </p>
-            <Button variant="outline" className="shadow-md">
-              Read our Customer Stories <ArrowRight className="size-4" />
-            </Button>
           </div>
 
           <div className="relative mt-8 -mr-[max(3rem,calc((100vw-80rem)/2+3rem))] md:mt-12 lg:mt-20">

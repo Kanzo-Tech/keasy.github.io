@@ -23,15 +23,6 @@ const contactInfo = [
     content: (
       <div className="mt-3">
         <div>
-          <p className="">Careers</p>
-          <a
-            href="mailto:careers@streamline.com"
-            className="text-muted-foreground hover:text-foreground"
-          >
-            careers@streamline.com
-          </a>
-        </div>
-        <div className="mt-1">
           <p className="">Press</p>
           <a
             href="mailto:press@streamline.com"
