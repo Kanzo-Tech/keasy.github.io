@@ -1,35 +1,34 @@
 import {
   ArrowRight,
-  Blend,
-  ChartNoAxesColumn,
-  CircleDot,
-  Diamond,
+  BookOpen,
+  BrainCircuit,
+  Network,
+  ShieldCheck,
 } from "lucide-react";
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
-import { GITHUB_URL } from "@/consts";
 
 const features = [
   {
-    title: "Tailored workflows",
-    description: "Track progress across custom issue flows for your team.",
-    icon: CircleDot,
+    title: "Data cataloging",
+    description: "Automatically process and catalog data from your cloud storage",
+    icon: BookOpen,
   },
   {
-    title: "Cross-team projects",
-    description: "Collaborate across teams and departments.",
-    icon: Blend,
+    title: "Knowledge graphs",
+    description: "Transform raw data into RDF graphs you can explore and query",
+    icon: Network,
   },
   {
-    title: "Milestones",
-    description: "Break projects down into concrete phases.",
-    icon: Diamond,
+    title: "AI-powered exploration",
+    description: "Let domain experts discover insights without writing code",
+    icon: BrainCircuit,
   },
   {
-    title: "Progress insights",
-    description: "Track scope, velocity, and progress over time.",
-    icon: ChartNoAxesColumn,
+    title: "Shape validation",
+    description: "Ensure data quality with SHACL/ShEx validation and SPARQL querying",
+    icon: ShieldCheck,
   },
 ];
 
@@ -40,17 +39,16 @@ export const Hero = () => {
         {/* Left side - Main content */}
         <div className="flex-1">
           <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
-            Mainline Astro template
+            Your data space, made simple
           </h1>
 
           <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            Mainline is an open-source website template built with shadcn/ui,
-            Tailwind 4 & Astro 5
+            Discover, catalog, and explore your data with knowledge graphs and AI — bridging the gap between raw data and domain expertise.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
             <Button asChild>
-              <a href={GITHUB_URL}>Get template</a>
+              <a href="/contact">Book a demo</a>
             </Button>
             <Button
               variant="outline"
@@ -58,10 +56,10 @@ export const Hero = () => {
               asChild
             >
               <a
-                href="https://shadcnblocks.com"
+                href="#feature-modern-teams"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
-                Built by shadcnblocks.com
+                See how it works
                 <ArrowRight className="stroke-3" />
               </a>
             </Button>
