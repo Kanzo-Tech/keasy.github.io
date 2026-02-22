@@ -135,7 +135,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
         <span className="text-muted-foreground"> {item.description}</span>
       </div>
 
-      <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border">
+      <div className="relative overflow-hidden rounded-md border border-border">
         {item.fade && (
           <div className="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
         )}
@@ -144,12 +144,12 @@ const Item = ({ item, isLast, className }: ItemProps) => {
             <img
               src={image.src}
               alt={image.alt}
-              className="size-full object-cover object-left-top dark:hidden"
+              className="w-full dark:hidden"
             />
             <img
               src={image.src.replace(/(\.\w+)$/, "-dark$1")}
               alt={image.alt}
-              className="hidden size-full object-cover object-left-top dark:block"
+              className="hidden w-full dark:block"
             />
           </div>
         ))}
