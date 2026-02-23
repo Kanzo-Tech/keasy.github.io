@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { url } from "@/lib/url";
 
 const items = [
   {
@@ -16,56 +17,56 @@ const items = [
     author: "Amy Chase",
     role: "PM",
     company: "Mercury Finance",
-    image: `${import.meta.env.BASE_URL}testimonials/amy-chase.webp`,
+    image: url("/testimonials/amy-chase.webp"),
   },
   {
     quote: "I was able to replace 80% of my team with Keasy bots.",
     author: "Jonas Kotara",
     role: "Lead Engineer",
     company: "Mercury Finance",
-    image: `${import.meta.env.BASE_URL}testimonials/jonas-kotara.webp`,
+    image: url("/testimonials/jonas-kotara.webp"),
   },
   {
     quote: "Founder Mode is hard enough without having a really nice PM app.",
     author: "Kevin Yam",
     role: "Founder",
     company: "Mercury Finance",
-    image: `${import.meta.env.BASE_URL}testimonials/kevin-yam.webp`,
+    image: url("/testimonials/kevin-yam.webp"),
   },
   {
     quote: "I can use the tool as a substitute from my PM.",
     author: "Kundo Marta",
     role: "Founder",
     company: "Mercury Finance",
-    image: `${import.meta.env.BASE_URL}testimonials/kundo-marta.webp`,
+    image: url("/testimonials/kundo-marta.webp"),
   },
   {
     quote: "We're misusing Keasy as a CRM and it still works!",
     author: "Amy Chase",
     role: "PM",
     company: "Mercury Finance",
-    image: `${import.meta.env.BASE_URL}testimonials/amy-chase.webp`,
+    image: url("/testimonials/amy-chase.webp"),
   },
   {
     quote: "I was able to replace 80% of my team with Keasy bots.",
     author: "Jonas Kotara",
     role: "Lead Engineer",
     company: "Mercury Finance",
-    image: `${import.meta.env.BASE_URL}testimonials/jonas-kotara.webp`,
+    image: url("/testimonials/jonas-kotara.webp"),
   },
   {
     quote: "Founder Mode is hard enough without having a really nice PM app.",
     author: "Kevin Yam",
     role: "Founder",
     company: "Mercury Finance",
-    image: `${import.meta.env.BASE_URL}testimonials/kevin-yam.webp`,
+    image: url("/testimonials/kevin-yam.webp"),
   },
   {
     quote: "I can use the tool as a substitute from my PM.",
     author: "Kundo Marta",
     role: "Founder",
     company: "Mercury Finance",
-    image: `${import.meta.env.BASE_URL}testimonials/kundo-marta.webp`,
+    image: url("/testimonials/kundo-marta.webp"),
   },
 ];
 

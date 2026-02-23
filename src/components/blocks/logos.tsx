@@ -1,6 +1,7 @@
 import Marquee from "react-fast-marquee";
 
 import { cn } from "@/lib/utils";
+import { url } from "@/lib/url";
 
 type Company = {
   name: string;
@@ -12,22 +13,22 @@ export const Logos = () => {
   const companies = [
     {
       name: "Think-it",
-      logo: `${import.meta.env.BASE_URL}logos/think-it.svg`,
+      logo: url("/logos/think-it.svg"),
       href: "https://think-it.io/",
     },
     {
       name: "MSI Digital Builders",
-      logo: `${import.meta.env.BASE_URL}logos/msi.png`,
+      logo: url("/logos/msi.png"),
       href: "https://msidigitalbuilders.com/",
     },
     {
       name: "Universidad de Málaga",
-      logo: `${import.meta.env.BASE_URL}logos/uma.png`,
+      logo: url("/logos/uma.png"),
       href: "https://www.uma.es/",
     },
     {
       name: "Evidenze",
-      logo: `${import.meta.env.BASE_URL}logos/evidenze.svg`,
+      logo: url("/logos/evidenze.svg"),
       href: "https://evidenze.com/",
     },
   ];

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { url } from "@/lib/url";
 
 export const AboutSection = () => {
   return (
@@ -7,8 +8,8 @@ export const AboutSection = () => {
       <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
         <ImageSection
           images={[
-            { src: `${import.meta.env.BASE_URL}about/1.webp`, alt: "Keasy platform" },
-            { src: `${import.meta.env.BASE_URL}about/2.webp`, alt: "Data exploration" },
+            { src: url("/about/1.webp"), alt: "Keasy platform" },
+            { src: url("/about/2.webp"), alt: "Data exploration" },
           ]}
           className="xl:-translate-x-10"
         />
@@ -33,8 +34,8 @@ export const AboutSection = () => {
         />
         <ImageSection
           images={[
-            { src: `${import.meta.env.BASE_URL}about/3.webp`, alt: "Knowledge graph visualization" },
-            { src: `${import.meta.env.BASE_URL}about/4.webp`, alt: "Data cataloging" },
+            { src: url("/about/3.webp"), alt: "Knowledge graph visualization" },
+            { src: url("/about/4.webp"), alt: "Data cataloging" },
           ]}
           className="hidden lg:flex xl:translate-x-10"
         />

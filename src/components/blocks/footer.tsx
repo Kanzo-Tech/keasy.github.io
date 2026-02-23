@@ -1,24 +1,23 @@
 import { ArrowUpRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { url } from "@/lib/url";
 
 export function Footer() {
-  const base = import.meta.env.BASE_URL;
-
   const navigation = [
-    { name: "Product", href: `${base}#knowledge-graphs` },
-    { name: "About Us", href: `${base}about` },
-    // { name: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
-    // { name: "Blog", href: "/blog" }, // TODO: re-enable when blog posts are ready
-    { name: "FAQ", href: `${base}#faq` },
-    { name: "Contact", href: `${base}#contact` },
+    { name: "Product", href: url("/#knowledge-graphs") },
+    { name: "About Us", href: url("/about") },
+    // { name: "Pricing", href: url("/pricing") }, // TODO: re-enable when pricing is defined
+    // { name: "Blog", href: url("/blog") }, // TODO: re-enable when blog posts are ready
+    { name: "FAQ", href: url("/#faq") },
+    { name: "Contact", href: url("/#contact") },
   ];
 
   const social = [
     { name: "LinkedIn", href: "https://linkedin.com/company/kanzo-tech" },
   ];
 
-  const legal = [{ name: "Privacy Policy", href: `${base}privacy` }];
+  const legal = [{ name: "Privacy Policy", href: url("/privacy") }];
 
   return (
     <footer id="contact" className="flex flex-col items-center gap-14 pt-28 lg:pt-32">

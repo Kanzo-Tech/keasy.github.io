@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { url } from "@/lib/url";
 
 const BlogPosts = ({ posts }: { posts: any[] }) => {
   return (
@@ -23,7 +24,7 @@ const BlogPosts = ({ posts }: { posts: any[] }) => {
               <a
                 key={post.id}
                 className="rounded-xl border"
-                href={`/blog/${post.id}/`}
+                href={url(`/blog/${post.id}/`)}
               >
                 <div className="p-2">
                   <img

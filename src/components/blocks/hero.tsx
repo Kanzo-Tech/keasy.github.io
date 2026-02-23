@@ -8,6 +8,7 @@ import {
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
+import { url } from "@/lib/url";
 
 const features = [
   {
@@ -98,12 +99,12 @@ export const Hero = () => {
       <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
         <div className="relative h-[793px] w-full">
           <img
-            src={`${import.meta.env.BASE_URL}screenshots/hero.webp`}
+            src={url("/screenshots/hero.webp")}
             alt="Keasy platform interface"
             className="w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-r-none dark:hidden"
           />
           <img
-            src={`${import.meta.env.BASE_URL}screenshots/hero-dark.webp`}
+            src={url("/screenshots/hero-dark.webp")}
             alt="Keasy platform interface"
             className="hidden w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-r-none dark:block"
           />
