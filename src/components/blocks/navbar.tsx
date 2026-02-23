@@ -14,6 +14,8 @@ import {
 import { GITHUB_URL } from "@/consts";
 import { cn } from "@/lib/utils";
 
+const base = import.meta.env.BASE_URL;
+
 const ITEMS = [
   {
     label: "Features",
@@ -21,22 +23,22 @@ const ITEMS = [
     dropdownItems: [
       {
         title: "Why Keasy",
-        href: "/#why-keasy",
+        href: `${base}#why-keasy`,
         description:
           "Open standards, no silos, no PhD required",
       },
       {
         title: "Data space lifecycle",
-        href: "/#knowledge-graphs",
+        href: `${base}#knowledge-graphs`,
         description: "DCAT catalogs, visual search, shape validation, and AI exploration",
       },
     ],
   },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: `${base}about` },
   // { label: "Pricing", href: "/pricing" }, // TODO: re-enable when pricing is defined
   // { label: "Blog", href: "/blog" }, // TODO: re-enable when blog posts are ready
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
+  { label: "FAQ", href: `${base}#faq` },
+  { label: "Contact", href: `${base}#contact` },
 ];
 
 export const Navbar = () => {
@@ -56,9 +58,9 @@ export const Navbar = () => {
       )}
     >
       <div className="flex items-center justify-between px-6 py-3">
-        <a href="/" className="flex shrink-0 items-center gap-2">
+        <a href={import.meta.env.BASE_URL} className="flex shrink-0 items-center gap-2">
           <img
-            src="/logo.svg"
+            src={`${import.meta.env.BASE_URL}logo.svg`}
             alt=""
             width={18}
             height={18}

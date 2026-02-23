@@ -7,8 +7,8 @@ export const AboutSection = () => {
       <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
         <ImageSection
           images={[
-            { src: "/about/1.webp", alt: "Keasy platform" },
-            { src: "/about/2.webp", alt: "Data exploration" },
+            { src: `${import.meta.env.BASE_URL}about/1.webp`, alt: "Keasy platform" },
+            { src: `${import.meta.env.BASE_URL}about/2.webp`, alt: "Data exploration" },
           ]}
           className="xl:-translate-x-10"
         />
@@ -33,8 +33,8 @@ export const AboutSection = () => {
         />
         <ImageSection
           images={[
-            { src: "/about/3.webp", alt: "Knowledge graph visualization" },
-            { src: "/about/4.webp", alt: "Data cataloging" },
+            { src: `${import.meta.env.BASE_URL}about/3.webp`, alt: "Knowledge graph visualization" },
+            { src: `${import.meta.env.BASE_URL}about/4.webp`, alt: "Data cataloging" },
           ]}
           className="hidden lg:flex xl:translate-x-10"
         />

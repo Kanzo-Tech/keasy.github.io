@@ -12,22 +12,22 @@ export const Logos = () => {
   const companies = [
     {
       name: "Think-it",
-      logo: "/logos/think-it.svg",
+      logo: `${import.meta.env.BASE_URL}logos/think-it.svg`,
       href: "https://think-it.io/",
     },
     {
       name: "MSI Digital Builders",
-      logo: "/logos/msi.png",
+      logo: `${import.meta.env.BASE_URL}logos/msi.png`,
       href: "https://msidigitalbuilders.com/",
     },
     {
       name: "Universidad de Málaga",
-      logo: "/logos/uma.png",
+      logo: `${import.meta.env.BASE_URL}logos/uma.png`,
       href: "https://www.uma.es/",
     },
     {
       name: "Evidenze",
-      logo: "/logos/evidenze.svg",
+      logo: `${import.meta.env.BASE_URL}logos/evidenze.svg`,
       href: "https://evidenze.com/",
     },
   ];
