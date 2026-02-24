@@ -5,6 +5,9 @@ import '../styles/global.css';
 import { SITE_TITLE, SITE_METADATA } from '../consts';
 import { url } from '@/lib/url';
 
+import dmSansRegular from '@/fonts/dm-sans/DMSans-Regular.ttf';
+import dmSansBold from '@/fonts/dm-sans/DMSans-Bold.ttf';
+
 interface Props {
 	title: string;
 	description: string;
@@ -33,14 +36,14 @@ const imageURL = new URL(url(finalImage), Astro.url);
 <!-- Preload local fonts -->
 <link
   rel="preload"
-  href={url("/fonts/dm-sans/DMSans-Regular.ttf")}
+  href={dmSansRegular}
   as="font"
   type="font/ttf"
   crossorigin="anonymous"
 />
 <link
   rel="preload"
-  href={url("/fonts/dm-sans/DMSans-Bold.ttf")}
+  href={dmSansBold}
   as="font"
   type="font/ttf"
   crossorigin="anonymous"

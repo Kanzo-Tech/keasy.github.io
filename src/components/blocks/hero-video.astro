@@ -1,0 +1,26 @@
+---
+import { url } from '@/lib/url';
+---
+
+<div class="mt-12 mb-28 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24 lg:mb-32">
+  <div class="relative w-full">
+    <video
+      src={url("/screenshots/demo-light.mp4")}
+      autoplay
+      muted
+      loop
+      playsinline
+      controls
+      class="w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-r-none dark:hidden"
+    />
+    <video
+      src={url("/screenshots/demo-dark.mp4")}
+      autoplay
+      muted
+      loop
+      playsinline
+      controls
+      class="hidden w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-r-none dark:block"
+    />
+  </div>
+</div>

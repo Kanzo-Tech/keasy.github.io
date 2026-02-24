@@ -8,7 +8,6 @@ import {
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
-import { url } from "@/lib/url";
 
 const features = [
   {
@@ -35,7 +34,7 @@ const features = [
 
 export const Hero = () => {
   return (
-    <section className="py-28 lg:py-32 lg:pt-44">
+    <section className="pt-28 lg:pt-44">
       <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
         {/* Left side - Main content */}
         <div className="flex-1">
@@ -93,21 +92,6 @@ export const Hero = () => {
               </div>
             );
           })}
-        </div>
-      </div>
-
-      <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
-        <div className="relative h-[793px] w-full">
-          <img
-            src={url("/screenshots/hero.webp")}
-            alt="Keasy platform interface"
-            className="w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-r-none dark:hidden"
-          />
-          <img
-            src={url("/screenshots/hero-dark.webp")}
-            alt="Keasy platform interface"
-            className="hidden w-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-r-none dark:block"
-          />
         </div>
       </div>
     </section>
