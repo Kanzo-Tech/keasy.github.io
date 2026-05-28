@@ -73,6 +73,34 @@ export function Footer() {
         </ul>
       </nav>
 
+      <div className="container flex flex-col items-center justify-center gap-8 md:flex-row md:gap-12">
+        <picture>
+          <img
+            src={url("/logos/funded-by-eu-dark.png")}
+            alt="Funded by the European Union"
+            className="block h-10 w-auto object-contain opacity-70 transition-opacity hover:opacity-100 dark:hidden"
+          />
+          <img
+            src={url("/logos/funded-by-eu-white.png")}
+            alt="Funded by the European Union"
+            className="hidden h-10 w-auto object-contain opacity-70 transition-opacity hover:opacity-100 dark:block"
+          />
+        </picture>
+
+        <picture>
+          <img
+            src={url("/logos/plan-recuperacion-dark.png")}
+            alt="Plan de Recuperación, Transformación y Resiliencia — NextGenerationEU"
+            className="block h-10 w-auto object-contain opacity-70 transition-opacity hover:opacity-100 dark:hidden"
+          />
+          <img
+            src={url("/logos/plan-recuperacion-white.png")}
+            alt="Plan de Recuperación, Transformación y Resiliencia — NextGenerationEU"
+            className="hidden h-10 w-auto object-contain opacity-70 transition-opacity hover:opacity-100 dark:block"
+          />
+        </picture>
+      </div>
+
       <div className="mt-10 w-full md:mt-14 lg:mt-20">
         <svg
           viewBox="0 0 260 85"
