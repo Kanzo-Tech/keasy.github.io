@@ -77,12 +77,12 @@ export function Footer() {
         <picture>
           <img
             src={url("/logos/funded-by-eu-dark.png")}
-            alt="Funded by the European Union"
+            alt="Financiado por la Unión Europea — NextGenerationEU"
             className="block h-10 w-auto object-contain opacity-70 transition-opacity hover:opacity-100 dark:hidden"
           />
           <img
             src={url("/logos/funded-by-eu-white.png")}
-            alt="Funded by the European Union"
+            alt="Financiado por la Unión Europea — NextGenerationEU"
             className="hidden h-10 w-auto object-contain opacity-70 transition-opacity hover:opacity-100 dark:block"
           />
         </picture>
