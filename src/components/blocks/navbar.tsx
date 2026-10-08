@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { ChevronRight, Github } from "lucide-react";
 
+import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   NavigationMenu,
@@ -12,28 +13,36 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { GITHUB_URL } from "@/consts";
-import { cn } from "@/lib/utils";
 import { url } from "@/lib/url";
+import { cn } from "@/lib/utils";
 
 const ITEMS = [
   {
-    label: "Features",
-    href: "#features",
+    label: "Product",
+    href: "#capabilities",
     dropdownItems: [
+      {
+        title: "See it in action",
+        href: url("/#product"),
+        description: "Explore a 327K-node graph in your browser",
+      },
+      {
+        title: "What you can do",
+        href: url("/#capabilities"),
+        description: "Charts for every column, graph and map, Ask, dashboards and rules",
+      },
+      {
+        title: "Use cases",
+        href: url("/#use-cases"),
+        description: "Research, health, mobility, data quality and more",
+      },
       {
         title: "Why Keasy",
         href: url("/#why-keasy"),
-        description:
-          "Open standards, no silos, no PhD required",
-      },
-      {
-        title: "Data space lifecycle",
-        href: url("/#knowledge-graphs"),
-        description: "DCAT catalogs, visual search, shape validation, and AI exploration",
+        description: "No code, your data stays yours, open by design",
       },
     ],
   },
-  { label: "About Us", href: url("/about") },
   // { label: "Pricing", href: url("/pricing") }, // TODO: re-enable when pricing is defined
   // { label: "Blog", href: url("/blog") }, // TODO: re-enable when blog posts are ready
   { label: "FAQ", href: url("/#faq") },
@@ -58,14 +67,7 @@ export const Navbar = () => {
     >
       <div className="flex items-center justify-between px-6 py-3">
         <a href={url("/")} className="flex shrink-0 items-center gap-2">
-          <img
-            src={url("/logo.svg")}
-            alt=""
-            width={18}
-            height={18}
-            className="dark:invert"
-          />
-          <span className="font-display text-2xl font-semibold tracking-tight">keasy</span>
+          <Logo className="h-5 md:h-6" />
         </a>
 
         {/* Desktop Navigation */}

@@ -1,30 +1,30 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = "Keasy - Data Discovery & Cataloging Platform";
+export const SITE_TITLE = "Keasy — Visual data exploration with AI";
 export const SITE_DESCRIPTION =
-  "Discover, catalog, and explore your data with knowledge graphs and AI. Keasy bridges the gap between raw data and domain expertise.";
+  "Explore your data visually and ask it anything. Every column gets a chart, every click filters, and AI answers in plain words — for the people who know the data.";
 
 export const GITHUB_URL = "https://github.com/Kanzo-Tech";
 
 export const SITE_METADATA = {
   title: {
-    default: "Keasy - Data Discovery & Cataloging Platform",
+    default: "Keasy — Visual data exploration with AI",
     template: "%s | Keasy",
   },
   description:
-    "Discover, catalog, and explore your data with knowledge graphs and AI. Keasy bridges the gap between raw data and domain expertise.",
+    "Explore your data visually and ask it anything. Every column gets a chart, every click filters, and AI answers in plain words — for the people who know the data.",
   keywords: [
-    "data discovery",
-    "data cataloging",
+    "visual data exploration",
+    "AI data analysis",
+    "ask your data",
+    "crossfilter dashboards",
     "knowledge graphs",
-    "RDF",
-    "DCAT",
-    "SPARQL",
+    "graph visualization",
+    "data quality rules",
     "SHACL",
-    "ShEx",
-    "data spaces",
-    "AI data exploration",
+    "RDF",
+    "no-code analytics",
     "domain experts",
     "data governance",
   ],
@@ -47,24 +47,24 @@ export const SITE_METADATA = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "Keasy - Data Discovery & Cataloging Platform",
+    title: "Keasy — Visual data exploration with AI",
     description:
-      "Discover, catalog, and explore your data with knowledge graphs and AI. Keasy bridges the gap between raw data and domain expertise.",
+      "Explore your data visually and ask it anything. Every column gets a chart, every click filters, and AI answers in plain words — for the people who know the data.",
     siteName: "Keasy",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Keasy - Data Discovery & Cataloging Platform",
+        alt: "Keasy — Visual data exploration with AI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Keasy - Data Discovery & Cataloging Platform",
+    title: "Keasy — Visual data exploration with AI",
     description:
-      "Discover, catalog, and explore your data with knowledge graphs and AI. Keasy bridges the gap between raw data and domain expertise.",
+      "Explore your data visually and ask it anything. Every column gets a chart, every click filters, and AI answers in plain words — for the people who know the data.",
     images: ["/og-image.jpg"],
   },
 };

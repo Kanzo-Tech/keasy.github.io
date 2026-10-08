@@ -1,50 +1,47 @@
-import { Combine, Globe, Sparkles } from "lucide-react";
+import { Globe, Lock, MousePointerClick } from "lucide-react";
 
 import { DashedLine } from "../dashed-line";
 
+import { SectionLabel } from "@/components/section-label";
 import { Card, CardContent } from "@/components/ui/card";
 
 const items = [
   {
-    icon: Combine,
-    title: "Break down data silos",
+    icon: MousePointerClick,
+    title: "No code, no waiting",
     description:
-      "Connect scattered sources — cloud storage, local files, databases — into a single, unified data space your whole organization can use.",
+      "Domain experts explore, filter and ask on their own. No SQL, no SPARQL, no ticket to the data team.",
+  },
+  {
+    icon: Lock,
+    title: "Your data stays yours",
+    description:
+      "Mapping runs in your browser, Keasy never holds a model key, and every organization has its own workspace and roles.",
   },
   {
     icon: Globe,
-    title: "Open standards, zero lock-in",
+    title: "Open by design",
     description:
-      "Built on DCAT, SPARQL, and SHACL. Your catalogs and queries use open W3C standards — no proprietary formats, fully portable.",
-  },
-  {
-    icon: Sparkles,
-    title: "No PhD required",
-    description:
-      "Keasy handles the complexity of semantic web technologies behind the scenes. Domain experts catalog, search, and validate data through an intuitive UI and AI.",
+      "Built on open standards, so what you build in Keasy stays portable — no proprietary formats, no lock-in.",
   },
 ];
+
+const standards = ["RDF", "SHACL", "ShEx", "Parquet", "OIDC"];
 
 export const Features = () => {
   return (
     <section id="why-keasy" className="pb-28 lg:pb-32">
       <div className="container">
-        {/* Top dashed line with text */}
-        <div className="relative flex items-center justify-center">
-          <DashedLine className="text-muted-foreground" />
-          <span className="bg-muted text-muted-foreground absolute px-3 font-mono text-sm font-medium tracking-wide max-md:hidden">
-            KNOW YOUR DATA. OWN YOUR DATA.
-          </span>
-        </div>
+        <SectionLabel>Why Keasy</SectionLabel>
 
         {/* Content */}
         <div className="mx-auto mt-10 grid max-w-5xl items-center gap-3 md:gap-0 lg:mt-24 lg:grid-cols-2">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            From raw data to actionable knowledge
+            Built for the people who know the data
           </h2>
           <p className="text-muted-foreground leading-snug">
-            Keasy turns raw, scattered data into a governed knowledge
-            base that anyone in your organization can trust and explore.
+            The people closest to the data are often the furthest from it.
+            Keasy closes that gap — without giving up control.
           </p>
         </div>
 
@@ -54,8 +51,8 @@ export const Features = () => {
             {items.map((item, i) => (
               <div key={i} className="flex flex-1 max-md:flex-col">
                 <div className="flex flex-1 flex-col gap-4 p-6 md:p-8">
-                  <div className="bg-muted flex size-10 items-center justify-center rounded-lg">
-                    <item.icon className="text-foreground size-5" />
+                  <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-field">
+                    <item.icon className="size-5" />
                   </div>
                   <h3 className="text-lg font-semibold tracking-tight">
                     {item.title}
@@ -78,6 +75,12 @@ export const Features = () => {
             ))}
           </CardContent>
         </Card>
+
+        <p className="text-muted-foreground mt-8 flex flex-wrap justify-center gap-x-4 gap-y-1 font-mono text-xs tracking-wide">
+          {standards.map((standard) => (
+            <span key={standard}>{standard}</span>
+          ))}
+        </p>
       </div>
     </section>
   );

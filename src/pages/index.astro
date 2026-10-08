@@ -2,28 +2,24 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import { Background } from '@/components/background';
+import { Capabilities } from '@/components/blocks/capabilities';
 import { FAQ } from '@/components/blocks/faq';
 import { Features } from '@/components/blocks/features';
 import { Hero } from '@/components/blocks/hero';
 import { Logos } from '@/components/blocks/logos';
-// import { Pricing } from '@/components/blocks/pricing'; // TODO: re-enable when pricing is defined
-import HeroVideo from '@/components/blocks/hero-video.astro';
-import ResourceAllocation from '@/components/blocks/resource-allocation.astro';
-// import { Testimonials } from '@/components/blocks/testimonials'; // TODO: re-enable when testimonials/case studies are ready
+import { UseCases } from '@/components/blocks/use-cases';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 ---
 
 <DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION} >
-  <Background className="via-muted to-muted/80">
-    <Hero />
-    <HeroVideo />
+  <Background>
+    <Hero client:load />
     <Logos client:only="react" />
+    <Capabilities client:visible />
+    <UseCases />
     <Features />
-    <ResourceAllocation />
   </Background>
-  <!-- <Testimonials client:only='react'/> --> <!-- TODO: re-enable when testimonials/case studies are ready -->
   <Background variant="bottom">
-    <!-- <Pricing client:only='react'/> --> <!-- TODO: re-enable when pricing is defined -->
     <FAQ client:load />
   </Background>
 </DefaultLayout>
