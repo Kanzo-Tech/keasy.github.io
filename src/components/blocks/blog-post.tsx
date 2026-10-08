@@ -1,3 +1,4 @@
+import type { CollectionEntry } from "astro:content";
 import { format } from "date-fns";
 
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -5,7 +6,7 @@ const BlogPost = ({
   post,
   children,
 }: {
-  post: any[];
+  post: CollectionEntry<"blog">;
   children: React.ReactNode;
 }) => {
   const { title, authorName, image, pubDate, description, authorImage } =
@@ -19,7 +20,7 @@ const BlogPost = ({
           <div className="flex items-center gap-3 text-sm md:text-base">
             <Avatar className="h-8 w-8 border">
               <AvatarImage src={authorImage} />
-              <AvatarFallback>{authorName.charAt(0)}</AvatarFallback>
+              <AvatarFallback>{authorName?.charAt(0)}</AvatarFallback>
             </Avatar>
             <span>
               <span className="font-semibold">
