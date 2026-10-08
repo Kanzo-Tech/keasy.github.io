@@ -13,37 +13,42 @@ const categories = [
       {
         question: "What is Keasy?",
         answer:
-          "Keasy is a data discovery and cataloging platform. It processes data from cloud storage or local sources into RDF knowledge graphs, with automatic DCAT catalog generation, visual search, AI-powered exploration, and shape validation.",
+          "Keasy is a visual data exploration platform with AI. Connect your data, and every column gets a chart you can filter with a click. Follow relationships in a graph or on a map, ask questions in plain words, build dashboards and check your data against quality rules.",
       },
       {
         question: "Who is Keasy for?",
         answer:
-          "Keasy is built for domain experts who need to discover and understand data without relying on engineering teams. It bridges the gap between raw data and the people who need it most.",
+          "For the people who know the data best — analysts, researchers, operations and domain experts — who want answers without waiting on an engineering team.",
       },
       {
-        question: "Do I need technical knowledge to use Keasy?",
+        question: "Do I need to know SQL, SPARQL or RDF?",
         answer:
-          "Not at all. Keasy provides an intuitive visual interface for searching and exploring your data. SPARQL and RDF work under the hood — you don't need to know them to get value from the platform.",
+          "No. You pick, click and ask. Keasy writes the queries behind the scenes; open standards are there for portability, not as homework.",
       },
     ],
   },
   {
-    title: "Data",
+    title: "Data & security",
     questions: [
       {
-        question: "What data sources does Keasy support?",
+        question: "Where does my data live?",
         answer:
-          "Keasy connects to Amazon S3, Google Cloud Storage, Azure Blob Storage, and local filesystems. We're continuously adding support for more sources.",
+          "Where it already is. Keasy connects to your storage with credentials scoped to what it needs, and mapping runs in your browser, so files are not copied to our servers.",
       },
       {
-        question: "What standards does Keasy use?",
+        question: "How does the AI work, and what does it see?",
         answer:
-          "Keasy is built on open standards: RDF for knowledge graphs, DCAT for data catalogs, and SHACL/ShEx for shape validation. This ensures interoperability and avoids vendor lock-in.",
+          "Every answer is a query over what is in view, shown with its result. Keasy itself never holds a model key: requests go through an AI gateway, each one tied to your organization.",
       },
       {
-        question: "How does Keasy ensure data quality?",
+        question: "Can several teams or organizations use it?",
         answer:
-          "Keasy validates your data against SHACL and ShEx shape constraints, helping you catch inconsistencies and ensure compliance with your data models.",
+          "Yes. Each organization has its own workspace, and people get reader, editor or admin roles. Your instance can also wear your own branding.",
+      },
+      {
+        question: "How does Keasy check data quality?",
+        answer:
+          "You write rules once (SHACL) and Keasy shows every record that breaks them, over all your data or just the part you have selected.",
       },
     ],
   },
@@ -53,12 +58,7 @@ const categories = [
       {
         question: "How can I try Keasy?",
         answer:
-          "You can book a demo through our contact page. We'll walk you through the platform and discuss how Keasy fits your data needs.",
-      },
-      {
-        question: "How long does it take to set up?",
-        answer:
-          "Keasy can be connected to your data sources in minutes. Once connected, catalog generation and indexing happen automatically.",
+          "Book a demo and we will walk you through it on data like yours, and talk about how Keasy fits your team.",
       },
     ],
   },

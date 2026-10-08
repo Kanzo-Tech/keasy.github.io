@@ -6,7 +6,7 @@ const BASE = import.meta.env.BASE_URL.replace(/\/?$/, "/");
  * Works transparently in local dev (base = "/") and GitHub Pages (base = "/keasy.github.io/").
  *
  * @example
- *   url("/about")              → "/keasy.github.io/about"
+ *   url("/privacy")            → "/keasy.github.io/privacy"
  *   url("/logos/think-it.svg") → "/keasy.github.io/logos/think-it.svg"
  *   url("#faq")                → "#faq"
  *   url("https://example.com") → "https://example.com"

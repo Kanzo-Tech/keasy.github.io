@@ -1,7 +1,7 @@
 import Marquee from "react-fast-marquee";
 
-import { cn } from "@/lib/utils";
 import { url } from "@/lib/url";
+import { cn } from "@/lib/utils";
 
 type Company = {
   name: string;
@@ -38,9 +38,9 @@ export const Logos = () => {
       <div className="container space-y-10 lg:space-y-16">
         <div className="text-center">
           <h2 className="mx-auto mb-4 max-w-3xl text-xl md:text-2xl lg:text-3xl">
-            Bridging the gap between data and domain expertise.{" "}
+            Data you can see, filter and ask.{" "}
             <span className="text-muted-foreground">
-              Built with the teams turning raw data into real knowledge.
+              Built with the teams who know it best.
             </span>
           </h2>
         </div>

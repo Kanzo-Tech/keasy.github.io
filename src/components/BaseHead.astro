@@ -3,10 +3,10 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import { SITE_TITLE, SITE_METADATA } from '../consts';
+
+import neueHaasMedium from '@/fonts/neue-haas/NeueHaasDisplayMedium.woff2';
 import { url } from '@/lib/url';
 
-import dmSansRegular from '@/fonts/dm-sans/DMSans-Regular.ttf';
-import dmSansBold from '@/fonts/dm-sans/DMSans-Bold.ttf';
 
 interface Props {
 	title: string;
@@ -29,25 +29,11 @@ const imageURL = new URL(url(finalImage), Astro.url);
 <!-- Preconnect to Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href={neueHaasMedium} as="font" type="font/woff2" crossorigin="anonymous" />
 
 <!-- Load Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-<!-- Preload local fonts -->
-<link
-  rel="preload"
-  href={dmSansRegular}
-  as="font"
-  type="font/ttf"
-  crossorigin="anonymous"
-/>
-<link
-  rel="preload"
-  href={dmSansBold}
-  as="font"
-  type="font/ttf"
-  crossorigin="anonymous"
-/>
 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="robots" content={`${SITE_METADATA.robots.index ? 'index' : 'noindex'}, ${SITE_METADATA.robots.follow ? 'follow' : 'nofollow'}`} />
@@ -124,4 +110,3 @@ const imageURL = new URL(url(finalImage), Astro.url);
 <meta property="twitter:title" content={finalTitle} />
 <meta property="twitter:description" content={finalDescription} />
 <meta property="twitter:image" content={imageURL} />
-<meta property="twitter:creator" content={SITE_METADATA.twitter.creator} />
