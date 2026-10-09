@@ -67,9 +67,8 @@ export const DEMOS: Demo[] = [
     label: "Ask",
     stat: "Every answer is a query over what's in view — with its chart",
     steps: [
-      { text: "Filter to women", start: 0 },
-      { text: "Ask in plain words", start: 4.4 },
-      { text: "The answer, with its chart", start: { light: 20, dark: 12.4 } },
+      { text: "Ask in plain words", start: 0 },
+      { text: "The answer, with its chart", start: { light: 18.2, dark: 10.4 } },
     ],
     ...files("ask"),
   },
