@@ -50,6 +50,19 @@ export const DEMOS: Demo[] = [
     ...files("map"),
   },
   {
+    id: "crossfilter",
+    label: "Crossfilter",
+    stat: "One filter for every chart and the map",
+    steps: [
+      { text: "One filter, every chart", start: 0 },
+      { text: "Click a country", start: 3.8 },
+      { text: "Drag across longitude", start: 10 },
+      { text: "The same filter, on the map", start: 16.6 },
+      { text: "Every filter in the bar", start: 23.6 },
+    ],
+    ...files("crossfilter"),
+  },
+  {
     id: "ask",
     label: "Ask",
     stat: "Every answer is a query over what's in view — with its chart",
