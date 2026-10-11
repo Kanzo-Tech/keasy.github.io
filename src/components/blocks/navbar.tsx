@@ -24,22 +24,22 @@ const ITEMS = [
       {
         title: "See it in action",
         href: url("/#product"),
-        description: "Explore a 327K-node graph in your browser",
+        description: "Six short demos, from a timeline to your own rules",
       },
       {
-        title: "What you can do",
+        title: "How it works",
         href: url("/#capabilities"),
-        description: "Charts for every column, graph and map, Ask, dashboards and rules",
+        description: "Connect, explore, ask, check and share",
       },
       {
-        title: "Use cases",
+        title: "Sectors",
         href: url("/#use-cases"),
-        description: "Research, health, mobility, data quality and more",
+        description: "Housing, healthcare, research, transport and more",
       },
       {
         title: "Why Keasy",
         href: url("/#why-keasy"),
-        description: "No code, your data stays yours, open by design",
+        description: "No code, in your browser, your data stays yours, open",
       },
     ],
   },
