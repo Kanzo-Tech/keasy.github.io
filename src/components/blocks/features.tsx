@@ -1,4 +1,4 @@
-import { Globe, Lock, MousePointerClick } from "lucide-react";
+import { Globe, Lock, Monitor, MousePointerClick } from "lucide-react";
 
 import { DashedLine } from "../dashed-line";
 
@@ -13,10 +13,16 @@ const items = [
       "Domain experts explore, filter and ask on their own. No SQL, no SPARQL, no ticket to the data team.",
   },
   {
+    icon: Monitor,
+    title: "Runs in your browser",
+    description:
+      "Your files are compiled and queried right in the browser, in WebAssembly. The server stays light: it keeps who can see what, not your data.",
+  },
+  {
     icon: Lock,
     title: "Your data stays yours",
     description:
-      "Mapping runs in your browser, Keasy never holds a model key, and every organization has its own workspace and roles.",
+      "The corpus never leaves your storage. Keasy never holds a model key, and every organization has its own workspace and roles.",
   },
   {
     icon: Globe,
@@ -46,11 +52,11 @@ export const Features = () => {
         </div>
 
         {/* Value propositions */}
-        <Card className="mx-auto mt-8 max-w-5xl rounded-3xl md:mt-12 lg:mt-20">
-          <CardContent className="flex p-0 max-md:flex-col">
+        <Card className="mx-auto mt-8 max-w-6xl rounded-3xl md:mt-12 lg:mt-20">
+          <CardContent className="flex p-0 max-lg:flex-col">
             {items.map((item, i) => (
-              <div key={i} className="flex flex-1 max-md:flex-col">
-                <div className="flex flex-1 flex-col gap-4 p-6 md:p-8">
+              <div key={i} className="flex flex-1 max-lg:flex-col">
+                <div className="flex flex-1 flex-col gap-4 p-6 xl:p-8">
                   <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-field">
                     <item.icon className="size-5" />
                   </div>
@@ -62,12 +68,12 @@ export const Features = () => {
                   </p>
                 </div>
                 {i < items.length - 1 && (
-                  <div className="relative hidden md:block">
+                  <div className="relative hidden lg:block">
                     <DashedLine orientation="vertical" />
                   </div>
                 )}
                 {i < items.length - 1 && (
-                  <div className="relative block md:hidden">
+                  <div className="relative block lg:hidden">
                     <DashedLine orientation="horizontal" />
                   </div>
                 )}

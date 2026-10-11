@@ -35,15 +35,10 @@ export const Logos = () => {
 
   return (
     <section className="overflow-hidden pb-28 lg:pb-32">
-      <div className="container space-y-10 lg:space-y-16">
-        <div className="text-center">
-          <h2 className="mx-auto mb-4 max-w-3xl text-xl md:text-2xl lg:text-3xl">
-            Data you can see, filter and ask.{" "}
-            <span className="text-muted-foreground">
-              Built with the teams who know it best.
-            </span>
-          </h2>
-        </div>
+      <div className="container space-y-8 lg:space-y-10">
+        <h2 className="text-muted-foreground text-center font-mono text-xs font-medium tracking-[0.2em] uppercase">
+          Built with
+        </h2>
 
         <div className="flex w-full flex-col items-center">
           <LogoRow companies={companies} gridClassName="grid-cols-4" />

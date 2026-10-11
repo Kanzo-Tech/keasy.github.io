@@ -80,11 +80,11 @@ export const FAQ = ({
           <div className="space-y-4">
             {headerTag === "h1" ? (
               <h1 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-                Got Questions?
+                Got questions?
               </h1>
             ) : (
               <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-                Got Questions?
+                Got questions?
               </h2>
             )}
             <p className="text-muted-foreground max-w-md leading-snug lg:mx-auto">

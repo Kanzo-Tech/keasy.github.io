@@ -57,12 +57,23 @@ describe("demos", () => {
     }
   });
 
-  it.each(DEMOS.map((d) => [d.id, d] as const))("%s has steps from 0, in order", (_, demo) => {
+  // Each step is a segment of the chapter bar as wide as it plays, so one that starts with the next
+  // would be a segment nobody can see or press.
+  it.each(DEMOS.map((d) => [d.id, d] as const))("%s has steps from 0, each after the last", (_, demo) => {
     for (const side of ["light", "dark"] as const) {
       const starts = demo.steps.map((step) => startOf(step, side));
       expect(starts[0], side).toBe(0);
-      expect(starts, side).toEqual([...starts].sort((a, b) => a - b));
+      starts.slice(1).forEach((start, i) => expect(start, `${side}: ${demo.steps[i + 1].text}`).toBeGreaterThan(starts[i]));
     }
+  });
+
+  it.each(DEMOS.map((d) => [d.id, d] as const))("%s says what it is under the video", (_, demo) => {
+    expect(demo.category.trim()).not.toBe("");
+    expect(demo.description.trim()).not.toBe("");
+  });
+
+  it("labels are unique", () => {
+    expect(new Set(DEMOS.map((d) => d.label)).size).toBe(DEMOS.length);
   });
 
   it("ids are unique", () => {
