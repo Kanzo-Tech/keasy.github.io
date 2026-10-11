@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-import { ArrowRight, Maximize2, Search } from "lucide-react";
+import { ArrowRight, Maximize2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { DEMOS, startOf, type Demo } from "@/content/demos";
-import { useTheme } from "@/hooks/use-theme";
+import { useTheme, type Theme } from "@/hooks/use-theme";
 import { url } from "@/lib/url";
 import { cn } from "@/lib/utils";
 
@@ -20,7 +20,7 @@ export const Hero = () => {
           className="border-primary/25 bg-primary/8 text-foreground hover:bg-primary/12 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm transition-colors"
         >
           <span className="bg-primary size-1.5 rounded-full" />
-          Ask your data in plain words
+          Visual data exploration, with AI
           <ArrowRight className="size-3.5" />
         </a>
 
@@ -29,8 +29,8 @@ export const Hero = () => {
         </h1>
 
         <p className="text-muted-foreground mt-5 max-w-2xl text-lg text-balance md:text-xl">
-          Connect your data where it lives, explore every column visually,
-          filter with a click, and let AI answer the rest.
+          Connect it where it lives. Every column a chart, every click a
+          filter, every question a query you can see.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -39,7 +39,7 @@ export const Hero = () => {
           </Button>
           <Button size="lg" variant="outline" asChild>
             <a href={url("/#capabilities")}>
-              See how it works
+              See what it can do
               <ArrowRight />
             </a>
           </Button>
@@ -51,7 +51,7 @@ export const Hero = () => {
           <div
             role="tablist"
             aria-label="Product demos"
-            className="mb-5 flex justify-center gap-2 overflow-x-auto pb-1"
+            className="-mx-6 mb-6 flex gap-2 overflow-x-auto px-6 pb-1 [scrollbar-width:none] justify-center-safe"
           >
             {DEMOS.map((d) => (
               <button
@@ -61,12 +61,13 @@ export const Hero = () => {
                 aria-controls="demo-player"
                 onClick={() => setActive(d.id)}
                 className={cn(
-                  "shrink-0 rounded-full border px-4 py-1.5 text-sm transition-colors",
+                  "flex shrink-0 items-center gap-2 rounded-full border py-1.5 pr-4 pl-3.5 text-sm transition-colors",
                   d.id === demo.id
                     ? "bg-primary text-primary-foreground border-primary"
                     : "bg-background text-muted-foreground hover:text-foreground",
                 )}
               >
+                <d.icon aria-hidden className="size-4" />
                 {d.label}
               </button>
             ))}
@@ -79,9 +80,9 @@ export const Hero = () => {
   );
 };
 
-/** A window onto the app, on the brand's glow: a soft green by day, the neon by night. Under it, the
- * demo's steps: the one playing lights up, and pressing one jumps there. The window's bar carries the
- * demo's proof line as its title, and a button to watch it full screen. */
+/** A window onto the app, on the brand's glow: a soft green by day, the neon by night. Its bar has a
+ * button to watch it full screen. Under it, the demo's chapters, then what kind of thing it shows
+ * and what it does. */
 function DemoPlayer({ demo }: { demo: Demo }) {
   const theme = useTheme();
   // Every demo's video for the side worn is in the page: a tab shows its own and plays it from the
@@ -90,8 +91,8 @@ function DemoPlayer({ demo }: { demo: Demo }) {
   const videos = useRef(new Map<string, HTMLVideoElement>());
   const [warm, setWarm] = useState(false);
   const [time, setTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const side = theme ?? "light";
-  const current = demo.steps.findLastIndex((step) => startOf(step, side) <= time + 0.05);
 
   useEffect(() => {
     for (const [id, v] of videos.current) {
@@ -101,6 +102,7 @@ function DemoPlayer({ demo }: { demo: Demo }) {
       } else v.pause();
     }
     setTime(0);
+    setDuration(videos.current.get(demo.id)?.duration || 0);
   }, [demo.id, theme]);
 
   const seek = (start: number) => {
@@ -125,17 +127,10 @@ function DemoPlayer({ demo }: { demo: Demo }) {
         className="bg-primary/15 dark:bg-primary/20 absolute -inset-x-6 -inset-y-8 -z-10 rounded-[3rem] blur-3xl md:-inset-x-12"
       />
       <div className="bg-card overflow-hidden rounded-box border shadow-xl">
-        <div className="bg-muted/60 relative flex h-9 items-center gap-1.5 border-b px-3">
+        <div className="bg-muted/60 flex h-9 items-center gap-1.5 border-b px-3">
           <span className="bg-border size-2.5 rounded-full" />
           <span className="bg-border size-2.5 rounded-full" />
           <span className="bg-border size-2.5 rounded-full" />
-          {/* The proof line as the window's address bar. */}
-          <div className="pointer-events-none absolute inset-x-0 flex justify-center px-20">
-            <p className="bg-background text-muted-foreground flex max-w-full min-w-0 items-center gap-1.5 rounded-selector border px-3 py-0.5 font-mono text-[11px] tracking-wide md:min-w-80 md:justify-center md:text-xs">
-              <Search className="size-3 shrink-0" />
-              <span className="truncate">{demo.stat}</span>
-            </p>
-          </div>
           <button
             type="button"
             onClick={enlarge}
@@ -167,6 +162,9 @@ function DemoPlayer({ demo }: { demo: Demo }) {
                 onCanPlayThrough={() => {
                   if (d.id === demo.id) setWarm(true);
                 }}
+                onDurationChange={(e) => {
+                  if (d.id === demo.id) setDuration(e.currentTarget.duration || 0);
+                }}
                 onTimeUpdate={(e) => {
                   if (d.id === demo.id) setTime(e.currentTarget.currentTime);
                 }}
@@ -193,34 +191,83 @@ function DemoPlayer({ demo }: { demo: Demo }) {
         </div>
       </div>
 
-      <ol className="mt-5 flex flex-wrap justify-center gap-2">
-        {demo.steps.map((step, i) => (
-          <li key={step.text}>
-            <button
-              type="button"
-              onClick={() => seek(startOf(step, side))}
-              aria-current={i === current ? "step" : undefined}
-              className={cn(
-                "flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors",
-                i === current
-                  ? "border-primary/40 bg-primary/10 text-foreground"
-                  : "bg-background text-muted-foreground hover:text-foreground",
-              )}
-            >
-              <span
-                className={cn(
-                  "font-mono text-xs",
-                  i === current ? "text-primary" : "text-muted-foreground",
-                )}
-              >
-                {i + 1}
-              </span>
-              {step.text}
-            </button>
-          </li>
-        ))}
-      </ol>
+      <Chapters demo={demo} side={side} time={time} duration={duration} onSeek={seek} />
 
+      <div className="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-3.5 text-center">
+        <span className="bg-primary/10 text-primary rounded-full px-2.5 py-1 text-xs font-semibold tracking-wider uppercase">
+          {demo.category}
+        </span>
+        <p className="text-foreground text-base leading-relaxed text-balance md:text-lg">
+          {demo.description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/** The video's chapters as one segmented bar: each segment as wide as its chapter plays, the one
+ * playing filling as it goes and the ones before it full. Pressing a segment seeks there. Under it,
+ * which chapter of how many, and what it shows. */
+function Chapters({
+  demo,
+  side,
+  time,
+  duration,
+  onSeek,
+}: {
+  demo: Demo;
+  side: Theme;
+  time: number;
+  duration: number;
+  onSeek: (start: number) => void;
+}) {
+  const starts = demo.steps.map((step) => startOf(step, side));
+  const current = Math.max(0, starts.findLastIndex((start) => start <= time + 0.05));
+  // The last chapter runs to the end of the video, which only the element knows; until it does, it
+  // is as long as the others on average.
+  const ends = starts.map((_, i) =>
+    i < starts.length - 1
+      ? starts[i + 1]
+      : duration > starts[i]
+        ? duration
+        : starts[i] + (starts[i] / i || 1),
+  );
+  const pad = (n: number) => String(n).padStart(2, "0");
+
+  return (
+    <div className="mt-5">
+      <div role="group" aria-label="Chapters" className="flex gap-1">
+        {demo.steps.map((step, i) => {
+          const length = ends[i] - starts[i];
+          const progress =
+            i < current ? 1 : i > current ? 0 : Math.min(1, Math.max(0, (time - starts[i]) / length));
+          return (
+            <button
+              key={step.text}
+              type="button"
+              onClick={() => onSeek(starts[i])}
+              aria-label={`Chapter ${i + 1}: ${step.text}`}
+              aria-current={i === current ? "step" : undefined}
+              style={{ flexGrow: length, flexBasis: 0 }}
+              className="group min-w-0 py-2"
+            >
+              <span className="bg-border group-hover:bg-muted-foreground/40 block h-1 overflow-hidden rounded-full transition-colors">
+                <span
+                  className="bg-primary block h-full transition-[width] duration-300 ease-linear"
+                  style={{ width: `${progress * 100}%` }}
+                />
+              </span>
+            </button>
+          );
+        })}
+      </div>
+      <p className="text-muted-foreground mt-1 text-[13px]" aria-live="polite">
+        <span className="font-mono">
+          {pad(current + 1)} / {pad(demo.steps.length)}
+        </span>
+        {" · "}
+        <span className="text-foreground">{demo.steps[current].text}</span>
+      </p>
     </div>
   );
 }
