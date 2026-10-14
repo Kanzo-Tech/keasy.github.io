@@ -47,36 +47,72 @@ export const Hero = () => {
       </div>
 
       <div className="container mt-14 mb-24 md:mt-16 lg:mb-32">
-        {DEMOS.length > 1 && (
-          <div
-            role="tablist"
-            aria-label="Product demos"
-            className="-mx-6 mb-6 flex gap-2 overflow-x-auto px-6 pb-1 [scrollbar-width:none] justify-center-safe"
-          >
-            {DEMOS.map((d) => (
-              <button
-                key={d.id}
-                role="tab"
-                aria-selected={d.id === demo.id}
-                aria-controls="demo-player"
-                onClick={() => setActive(d.id)}
-                className={cn(
-                  "flex shrink-0 items-center gap-2 rounded-full border py-1.5 pr-4 pl-3.5 text-sm transition-colors",
-                  d.id === demo.id
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-background text-muted-foreground hover:text-foreground",
-                )}
-              >
-                <d.icon aria-hidden className="size-4" />
-                {d.label}
-              </button>
-            ))}
-          </div>
-        )}
+        {DEMOS.length > 1 && <DemoTabs active={demo.id} onSelect={setActive} />}
 
         <DemoPlayer demo={demo} />
       </div>
     </section>
+  );
+};
+
+/** The demos' tabs, in as few rows as fit, each row holding as many as the next (4 + 3, never 6 + 1),
+ * like `text-wrap: balance` for words. Until measured, and without script, they are one row that wraps. */
+/** `items` in `n` rows, in order, the first ones holding one more when they do not divide evenly. */
+const split = <T,>(items: T[], n: number): T[][] => {
+  const size = Math.floor(items.length / n);
+  const longer = items.length % n;
+  let at = 0;
+  return Array.from({ length: n }, (_, i) => items.slice(at, (at += size + (i < longer ? 1 : 0))));
+};
+
+const DemoTabs = ({ active, onSelect }: { active: string; onSelect: (id: string) => void }) => {
+  const list = useRef<HTMLDivElement>(null);
+  const [rows, setRows] = useState(1);
+
+  useEffect(() => {
+    const el = list.current;
+    if (!el) return;
+    const fit = () => {
+      const gap = parseFloat(getComputedStyle(el).rowGap) || 0;
+      const widths = [...el.querySelectorAll<HTMLElement>("[role=tab]")].map((t) => t.offsetWidth);
+      for (let n = 1; n <= widths.length; n++) {
+        const fits = split(widths, n).every(
+          (row) => row.reduce((a, b) => a + b, 0) + gap * (row.length - 1) <= el.clientWidth,
+        );
+        if (fits || n === widths.length) return setRows(n);
+      }
+    };
+    fit();
+    const observer = new ResizeObserver(fit);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={list} role="tablist" aria-label="Product demos" className="mb-6 flex flex-col items-center gap-2">
+      {split(DEMOS, rows).map((row, i) => (
+        <div key={i} role="none" className="flex flex-wrap justify-center gap-2">
+          {row.map((d) => (
+            <button
+              key={d.id}
+              role="tab"
+              aria-selected={d.id === active}
+              aria-controls="demo-player"
+              onClick={() => onSelect(d.id)}
+              className={cn(
+                "flex shrink-0 items-center gap-1.5 rounded-full border py-1.5 pr-3 pl-2.5 text-sm transition-colors sm:gap-2 sm:pr-4 sm:pl-3.5",
+                d.id === active
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-background text-muted-foreground hover:text-foreground",
+              )}
+            >
+              <d.icon aria-hidden className="size-4" />
+              {d.label}
+            </button>
+          ))}
+        </div>
+      ))}
+    </div>
   );
 };
 
